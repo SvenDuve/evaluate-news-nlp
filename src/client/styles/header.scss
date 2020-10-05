@@ -1,0 +1,23 @@
+$light-color:  #EAE7DC;
+$lightButDarker:  #D8C3A5;
+$darker: #D8C3A5;
+$lighter-red: #8E8D8A;
+$darker-red: #E98074;
+$fontInGeneral: 'Secular One', sans-serif;
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+}
+
+.logo {
+    display: grid;
+    align-content: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 20px;
+    background-color: $lighter-red;
+    text-align: center;
+}

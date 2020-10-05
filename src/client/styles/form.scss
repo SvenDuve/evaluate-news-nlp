@@ -1,0 +1,19 @@
+$light-color:  #EAE7DC;
+$lightButDarker:  #D8C3A5;
+$darker: #D8C3A5;
+$lighter-red: #8E8D8A;
+$darker-red: #E98074;
+
+
+form {
+    border: 5px solid $darker-red;
+    border-radius: 3px;
+    padding: 40px;
+}
+
+input {
+    padding: 5px 5px;
+    width: 100%;
+    line-height: 40px;
+    margin: 5px 0;
+}

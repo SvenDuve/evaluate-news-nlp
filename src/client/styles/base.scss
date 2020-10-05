@@ -1,0 +1,30 @@
+$light-color:  #EAE7DC;
+$lightButDarker:  #D8C3A5;
+$darker: #D8C3A5;
+$lighter-red: #8E8D8A;
+$darker-red: #E98074;
+$fontInGeneral: 'Secular One', sans-serif;
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: $darker-red;
+    background-color: $light-color;
+    font-family: $fontInGeneral;
+}
+
+div {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+main {
+    flex: 2;
+}
+
+section {
+    max-width: 800px;
+    margin: 50px auto;
+}
