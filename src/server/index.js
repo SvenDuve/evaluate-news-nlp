@@ -1,5 +1,12 @@
 const dotenv = require('dotenv');
 dotenv.config();
+
+console.log(`your api key is ${process.env.API_KEY}`)
+
+
+const application_key = process.env.API_KEY
+
+
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
@@ -25,3 +32,15 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 
+
+// adding Route
+
+// route to send the API Key:
+
+app.get('/api_key', keySend);
+
+function keySend(req, res) {
+
+    res.send(application_key);
+
+}

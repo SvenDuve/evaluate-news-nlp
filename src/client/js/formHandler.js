@@ -37,8 +37,8 @@
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 const baseUrl = 'https://api.meaningcloud.com/sentiment-2.1?key=';
-const api_key = 'c18782d6301382c11afed2771224f846';
-
+const api_key = 'c18782d6301382c11afed2771224f846&of=json&txt=';
+const model = '&lang=en'
 
 
 // req.end();
@@ -50,16 +50,45 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
     let formText = document.getElementById('name').value
-    // Client.checkForName(formText)
-    // const zip = '94040,us'
-    const url = baseUrl + api_key + formText
+
+    const url = baseUrl + api_key + formText + model
+    console.log(url)
+    console.log(formText)
     console.log("::: Form Submitted :::")
-    fetch(url)
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
-        console.log(res.message)
+        
+    postData(url)
+    .then(function(newData) {
+        document.getElementById('results').innerHTML = newData
+        console.log(newData)
     })
 }
 
 export { handleSubmit }
+
+
+
+// post data to url/ route using an object
+const postData = async ( url = '', data = {}) => {
+
+    const response = await fetch(url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+        },
+        maxRedirects: 20,
+        body: JSON.stringify(data),
+    });
+
+    try {
+
+        const newData = await response.text();
+        return newData;
+
+    } catch(error) {
+
+        console.log("error", error);
+    
+    }
+};
+
+
