@@ -4,7 +4,10 @@ dotenv.config();
 console.log(`your api key is ${process.env.API_KEY}`)
 
 
-const application_key = process.env.API_KEY
+const APIdata = {
+    application_key: process.env.API_KEY
+};
+
 
 
 var path = require('path')
@@ -41,6 +44,6 @@ app.get('/api_key', keySend);
 
 function keySend(req, res) {
 
-    res.send(application_key);
+    res.send(APIdata);
 
 }

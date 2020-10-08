@@ -25,17 +25,23 @@
                     <li>Text</li>
                     <li>some URL</li>
                 </ul>  
-            </div>  
+            </div>
                 <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input id="name" type="text" name="input" value="" onblur="" placeholder="Some text">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
+                </section>
             <section>
-
+                <strong>Your Search Text:</strong>
+                <div id="search"></div>
+            </section>
             <section>
                 <strong>Form Results:</strong>
-                <div id="results"></div>
+                <div id="results">
+                    <div id= positivity></div>
+                    <div id= score></div>
+                </div>
             </section>
         </main>
 
