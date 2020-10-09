@@ -16,7 +16,7 @@ const getAPI = async () => {
         const apiData = res.json();
         return apiData;
     } catch (error) {
-        console.log("Irgendein Fehler wieder", error);
+        console.log("Error in reading the message", error);
     }
 };
 
@@ -57,10 +57,11 @@ function handleSubmit(event) {
     .then(function(apiData){
         let formText = document.getElementById('name').value
         const url = baseUrl + apiData.application_key + model + formText + lang
+        console.log("Before the post")
         postData(url)
 
         .then(function(newData){
-            
+
             handleResponse(newData)
 
         })
